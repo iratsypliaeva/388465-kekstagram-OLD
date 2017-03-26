@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url]
 
 * Студент: [Ирина Цыпляева](https://up.htmlacademy.ru/javascript/9/user/388465).
-* Наставник: `Иван Долгов`.
+* Наставник: [Иван Долгов](https://htmlacademy.ru/profile/id322523).
 
 ---
 
