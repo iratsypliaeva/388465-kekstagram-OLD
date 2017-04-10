@@ -20,7 +20,7 @@
 </form>
 
 <div class="upload">
-  <form class="upload-form upload-image invisible" id="upload-select-image" method="post" enctype="multipart/form-data">
+  <form class="upload-form upload-image" id="upload-select-image" method="post" enctype="multipart/form-data">
     <input type="file" id="upload-file" class="upload-input" name="filename" required>
     <label class="upload-file upload-control" for="upload-file"></label>
     <button class="upload-submit upload-control" type="submit"></button>
@@ -96,7 +96,7 @@
   </div>
 </div>
 
-<div class="pictures container" style="font-size: 12px;">
+<div class="pictures container" style="font-size: 12px;" tabindex="0">
 </div>
 
 <footer class="footer container">
@@ -126,7 +126,7 @@
 </div>
 
 <template id="picture-template" style="display: none">
-  <a href="" class="picture">
+  <a href="" class="picture" tabindex="0">
     <img src="" width="182" height="182">
     <span class="picture-stats">
       <span class="picture-stat picture-comments"></span>
