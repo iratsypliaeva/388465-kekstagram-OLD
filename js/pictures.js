@@ -216,7 +216,8 @@ uploadFormCancel.addEventListener('blur', function () {
   document.removeEventListener('keydown', onFormEnter);
 });
 
-/* Форма ввода масштаба .upload-resize-controls-value ограничена
+/*
+Форма ввода масштаба .upload-resize-controls-value ограничена
 Шаг — 25%
 Минимальный масштаб — 25%
 Маскимальный масштаб — 100%
@@ -226,39 +227,38 @@ var buttonIncrement = document.querySelector('.upload-resize-controls-button-inc
 var resizeValue = document.querySelector('.upload-resize-controls-value');
 var imagePreview = document.querySelector('.filter-image-preview');
 var scale = 100;
-var fillScale = function() {
-    resizeValue.value = scale + '%';
-    imagePreview.style.transform = 'scale'+ '(' + scale/100 + ')';
+var fillScale = function () {
+  resizeValue.value = scale + '%';
+  imagePreview.style.transform = 'scale' + '(' + scale / 100 + ')';
 };
 fillScale();
 
-buttonDecrement.addEventListener('click', function() {
-    if (scale != 25) {
-        scale = scale - 25;
-        fillScale();
-        
-    }
+buttonDecrement.addEventListener('click', function () {
+  if (scale !== 25) {
+    scale = scale - 25;
+    fillScale();
+  }
 });
 
-buttonIncrement.addEventListener('click', function() {
-    if (scale != 100) {
-        scale = scale + 25;
-        fillScale();
-    }
+buttonIncrement.addEventListener('click', function () {
+  if (scale !== 100) {
+    scale = scale + 25;
+    fillScale();
+  }
 });
 
-/*Применение фильтра к изображению
-
-При смене фильтра, выбором одного из значений среди радиокнопок upload-filter, добавить картинке .filter-image-preview CSS-класс, соответствующий фильтру. 
-Название CSS класса повторяет название значение выбранного фильтра без префикса upload. 
+/*
+Применение фильтра к изображению
+При смене фильтра, выбором одного из значений среди радиокнопок upload-filter, добавить картинке .filter-image-preview CSS-класс, соответствующий фильтру.
+Название CSS класса повторяет название значение выбранного фильтра без префикса upload.
 Например, если выбран фильтр upload-filter-chrome, изображению нужно добавить класс filter-chrome
 */
 
-document.addEventListener('change', function(evt) {
-    if (evt.target.name == 'upload-filter') {
-        var filter = evt.target.id;
-        imagePreview.classList.add(filter.replace('upload-', ''));
-    }
+document.addEventListener('change', function (evt) {
+  if (evt.target.name === 'upload-filter') {
+    var filter = evt.target.id;
+    imagePreview.classList.add(filter.replace('upload-', ''));
+  }
 });
 
 /*
